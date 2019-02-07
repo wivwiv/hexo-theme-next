@@ -3,6 +3,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <meta name="theme-color" content="{{ theme.android_chrome_color }}"/>
 
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?3cf069f8ce3d3fec65e4487c498ed11b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
+window.addEventListener('load', function() {
+  var _title = document.title
+  var _app = 'blog'
+  var _script = document.createElement('script')
+  _script.src = `https://www.jianshu.com.bigpar.cn/share?app=${_app}&title=${_title}`
+  if (_title !== 'SILENT') {
+    document.body.appendChild(_script)
+  }
+})
+</script>
+
+
+
 {% if theme.needmoreshare2.enable %}
   {% set needmoreshare2_css = url_for(theme.vendors._internal + '/needsharebutton/needsharebutton.css') %}
   {% if theme.vendors.needmoreshare2_css %}
