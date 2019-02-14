@@ -139,12 +139,14 @@ exturl: false
 menu:
   home: / || home
   #about: /about/ || user
-  tags: /tags/ || tags
-  #categories: /categories/ || th
+  # categories: /categories/ || th
+  随笔: /categories/随笔 || book
+  编程: /categories/编程 || code
+  # tags: /tags/ || tags
   archives: /archives/ || archive
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
-  #commonweal: /404/ || heartbeat
+  # commonweal: /404/ || heartbeat
 
 # Enable/Disable menu icons / item badges.
 menu_settings:
@@ -158,9 +160,9 @@ menu_settings:
 
 # Schemes
 # scheme: Muse
-scheme: Mist
+# scheme: Mist
 # scheme: Pisces
-#scheme: Gemini
+scheme: Gemini
 
 
 # ---------------------------------------------------------------
@@ -175,9 +177,12 @@ site_state: true
 # Key is the link label showing to end users.
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
-#social:
-  #GitHub: https://github.com/yourname || github
-  #E-Mail: mailto:yourname@gmail.com || envelope
+social:
+  GitHub: https://github.com/wivwiv || github
+  # 知乎: https://www.zhihu.com/people/wivwiv
+  # 简书: https://www.jianshu.com/u/aa40f9a149bb
+  # 微博: https://weibo.com/u/2182741527
+  # E-Mail: bigpar@qq.com || envelope
   #Weibo: https://weibo.com/yourname || weibo
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
@@ -277,8 +282,8 @@ excerpt_description: true
 # Automatically Excerpt. Not recommend.
 # Use <!-- more --> in the post to control excerpt accurately.
 auto_excerpt:
-  enable: false
-  length: 150
+  enable: true
+  length: 200
 
 # Read more button
 # If true, the read more button would be displayed in excerpt section.
