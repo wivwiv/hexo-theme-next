@@ -11,16 +11,6 @@ var _hmt = _hmt || [];
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
-
-window.addEventListener('load', function() {
-  var _title = document.title
-  var _app = 'blog'
-  var _script = document.createElement('script')
-  _script.src = `https://www.jianshu.com.bigpar.cn/share?app=${_app}&title=${_title}`
-  if (_title !== 'SILENT') {
-    document.body.appendChild(_script)
-  }
-})
 </script>
 
 
