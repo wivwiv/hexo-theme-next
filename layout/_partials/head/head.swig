@@ -4,14 +4,18 @@
 <meta name="theme-color" content="{{ theme.android_chrome_color }}"/>
 
 <script>
+// 百度统计
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?3cf069f8ce3d3fec65e4487c498ed11b";
+  hm.src = "https://hm.baidu.com/hm.js?203275d5254d96667b1bdfdd7bef2ba1";
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
+
+
+<script data-ad-client="ca-pub-3312623505166629" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
 
