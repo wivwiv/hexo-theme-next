@@ -14,6 +14,18 @@ var _hmt = _hmt || [];
 })();
 </script>
 
+// Google 统计
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156519404-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-156519404-1');
+</script>
+
+
 
 <script data-ad-client="ca-pub-3312623505166629" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
