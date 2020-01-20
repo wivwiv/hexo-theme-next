@@ -60,3 +60,10 @@
   #}{{ theme.footer.custom_text }}{#
 #}</div>
 {% endif %}
+
+<script>
+var _log_ajax = fetch || $.get
+if (_log_ajax) {
+  _log_ajax('https://log.bigpar.cn/log/http_request_log?spm=blog&key=' + document.title)
+}
+</script>
