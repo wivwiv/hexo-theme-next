@@ -152,6 +152,15 @@
         </div>
       </div>
 
+      <div class="sitebar-ad-wrap">
+        <!-- web-site-overview -->
+        <ins class="adsbygoogle"
+          style="display:inline-block;width:200px;height:200px"
+          data-ad-client="ca-pub-3312623505166629"
+          data-ad-slot="7498362592">
+        </ins>
+      </div>
+
       {% if display_toc and toc(page.content).length > 1 %}
       <!--noindex-->
         <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">

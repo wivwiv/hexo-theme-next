@@ -48,7 +48,20 @@
           <div id="content" class="content">
             {% block content %}{% endblock %}
           </div>
+
+
           {% include '_partials/comments.swig' %}
+
+          <div class="comments-ad">
+            <!-- top-comment -->
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-3312623505166629"
+                data-ad-slot="7271131886"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+          </div>
+
         </div>
         {% if theme.sidebar.display !== 'remove' %}
           {% block sidebar %}{% endblock %}

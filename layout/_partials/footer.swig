@@ -67,3 +67,7 @@ if (_log_ajax) {
   _log_ajax('https://log.bigpar.cn/log/http_request_log?spm=blog&key=' + document.title)
 }
 </script>
+
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
