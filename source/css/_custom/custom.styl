@@ -1,1 +1,35 @@
 // Custom styles.
+html.mist
+  #header
+    .logo-line-before, .logo-line-after
+      display: none;
+
+  .site-meta .site-title
+    font-size: 16px;
+
+  .header-inner
+    padding: 0;
+    .site-nav
+      @media (min-width: 767px)
+        margin-left: 132px;
+
+  .menu
+    margin: 3px 0 0 0 !important;
+    text-align: left;
+
+  .posts-expand .post
+    margin-top: 60px;
+
+html.pisces
+  .post-button
+    margin-top: 20px;
+    text-align: left;
+  .posts-expand
+    .post-title, .post-meta
+      text-align: left;
+    .post-meta
+      margin: 3px auto;
+    .post-eof
+      display: none;
+  .post-footer
+    margin-bottom: 60px;

@@ -138,12 +138,13 @@ exturl: false
 # External url should start with http:// or https://
 menu:
   home: / || home
-  #about: /about/ || user
+  # about: /about/ || user
   # categories: /categories/ || th
-  随笔: /categories/随笔 || book
-  编程: /categories/编程 || code
+  code: /categories/编程 || code
+  book: /categories/随笔 || book
   # tags: /tags/ || tags
   archives: /archives/ || archive
+  # tools: https://tools.wivwiv.com || terminal
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
   # commonweal: /404/ || heartbeat
@@ -162,7 +163,7 @@ menu_settings:
 # scheme: Muse
 # scheme: Mist
 # scheme: Pisces
-scheme: Mist
+scheme: Pisces
 
 
 # ---------------------------------------------------------------
@@ -316,9 +317,9 @@ codeblock:
   border_radius:
   # Add copy button on codeblock
   copy_button:
-    enable: false
+    enable: true
     # Show text copy result
-    show_result: false
+    show_result: true
 
 # Wechat Subscriber
 #wechat_subscriber:
@@ -543,12 +544,12 @@ valine:
   appkey: cV3Yo77APWzQOvrb50eGQgE0  # your leancloud application appkey
   notify: false # mail notifier, See: https://github.com/xCss/Valine/wiki
   verify: false # Verification code
-  placeholder: ヾﾉ≧∀≦)o来啊，快活啊! # comment box placeholder
+  placeholder:  # comment box placeholder
   avatar: mm # gravatar style
   guest_info: nick,mail # custom comment header
   pageSize: 10 # pagination size
   visitor: false # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html
-  comment_count: true # if false, comment count will only be displayed in post page, not in home page
+  comment_count: false # if false, comment count will only be displayed in post page, not in home page
 
 # Support for LiveRe comments system.
 # You can get your uid from https://livere.com/insight/myCode (General web site)
