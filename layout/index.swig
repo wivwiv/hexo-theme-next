@@ -15,7 +15,7 @@
       {{ post_template.render(post, true) }}
       {% endif %}
 
-      {% if loop.index === 2 %}
+      {% if loop.index === 2 or loop.last %}
         <article class="post post-type-normal post-ad">
           <div class="post-block">
             <ins class="adsbygoogle"
