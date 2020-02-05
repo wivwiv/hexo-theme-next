@@ -1,5 +1,8 @@
 // Custom styles.
 html.mist
+  @media (min-width: 1200px)
+    .posts-expand .post-title
+      font-size: 20px;
   #header
     .logo-line-before, .logo-line-after
       display: none;
@@ -19,6 +22,45 @@ html.mist
 
   .posts-expand .post
     margin-top: 60px;
+    &.post:first-child
+      margin-top: 0;
+
+  .post-title
+    margin: 0
+
+  .main-inner
+    // margin-top: 50px
+  .post-body
+    margin-top: 20px
+  .posts-expand .post-meta
+    margin-bottom: 10px
+  .post-button
+    margin-top: 12px
+  
+  .btn {
+    display: inline-block;
+    padding: 0 20px;
+    font-size: 14px;
+    color: #555;
+    background: #fff;
+    border: 2px solid #555;
+    text-decoration: none;
+    border-radius: 0;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+    line-height: 2;
+  }
+  .btn:hover {
+    border-color: #222;
+    color: #fff;
+    background: #222;
+  }
+  .btn +.btn {
+    margin: 0 0 8px 8px;
+  }
+
 
 html.pisces
   .post-button
@@ -36,22 +78,31 @@ html.pisces
   .post-footer
     margin-bottom: 60px;
 
-  // 广告
-  .sitebar-ad-wrap
-    width: 100%;
-    margin-top: 10px;
-    .adsbygoogle
-      margin: 0 auto;
-  
-  .post-ad
-    margin-top: -24px;
-    .post-footer
-      margin-bottom: 30px;
-  
-  .comments-ad
-    min-height: 90px;
+  .sidebar-position-left
+  .posts-expand
+    padding-top: 10px
 
+// AD
+// 广告
+.sitebar-ad-wrap
+  width: 100%;
+  margin-top: 10px;
   .adsbygoogle
-    // background-color: red;
-  .post-content-ad
-    margin: 24px auto;
+    margin: 0 auto;
+  
+.post-ad
+  margin-top: -24px;
+  .post-footer
+    margin-bottom: 30px;
+
+.comments-ad
+  min-height: 90px;
+  margin: 16px auto 0 auto;
+.adsbygoogle
+  // background-color: red;
+.post-content-ad
+  margin: 24px auto;
+
+/* 自定义的文章摘要图片样式 */
+img.img-topic
+  width: 100%;

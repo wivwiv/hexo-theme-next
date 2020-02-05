@@ -54,4 +54,14 @@
 
   {% endif %}
 
+          <!-- top-comment-1 -->
+          <!--
+          <div class="comments-ad">
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:300px;height:250px"
+                 data-ad-client="ca-pub-3312623505166629"
+                data-ad-slot="4810837113"></ins>
+          </div>
+          -->
+
 {% endif %}

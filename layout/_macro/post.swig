@@ -292,6 +292,13 @@
           <!--/noindex-->
         {% elif post.excerpt %}
           {{ post.excerpt }}
+
+          {% if post.image %}
+          <div class="out-img-topic">
+            <img src={{ post.image }} class="img-topic" />
+          </div>
+          {% endif %}
+
           <!--noindex-->
           {% if theme.read_more_btn %}
             <div class="post-button text-center">

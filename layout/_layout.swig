@@ -42,6 +42,15 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          <div class="site-top-ad">
+            <!-- site-top-desktop -->
+            <!-- 
+            <ins class="adsbygoogle"
+              style="display:inline-block;width:160px;height:600px"
+              data-ad-client="ca-pub-3312623505166629"
+              data-ad-slot="4977771347"></ins>
+            -->
+          </div>
           {% if theme.scheme === 'Pisces' || theme.scheme === 'Gemini' %}
             {% include '_partials/header/sub-menu.swig' %}
           {% endif %}
@@ -49,18 +58,7 @@
             {% block content %}{% endblock %}
           </div>
 
-
           {% include '_partials/comments.swig' %}
-
-            <div class="comments-ad">
-              <!-- top-comment-1 -->
-              <ins class="adsbygoogle"
-              style="display:block"
-              data-ad-client="ca-pub-3312623505166629"
-              data-ad-slot="4810837113"
-              data-ad-format="auto"
-              data-full-width-responsive="true"></ins>
-            </div>
 
         </div>
         {% if theme.sidebar.display !== 'remove' %}
