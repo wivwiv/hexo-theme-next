@@ -139,11 +139,12 @@ exturl: false
 menu:
   home: / || home
   # about: /about/ || user
-  # categories: /categories/ || th
-  code: /categories/编程 || code
-  book: /categories/随笔 || book
+  # youtube: /categories/youtube || youtube-play
+  code: /categories/code || code
+  writer: /categories/writer || book
   # tags: /tags/ || tags
-  archives: /archives/ || archive
+  archives: /archives || archive
+  # categories: /categories || th
   # tools: https://tools.wivwiv.com || terminal
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
@@ -284,7 +285,7 @@ excerpt_description: true
 # Use <!-- more --> in the post to control excerpt accurately.
 auto_excerpt:
   enable: true
-  length: 90
+  length: 120
 
 # Read more button
 # If true, the read more button would be displayed in excerpt section.
@@ -292,7 +293,7 @@ read_more_btn: true
 
 # Post meta display settings
 post_meta:
-  item_text: true
+  item_text: false
   created_at: true
   updated_at:
     enabled: false
@@ -402,7 +403,7 @@ cheers_enabled: true
 # Arial | Tahoma | Helvetica | Times New Roman | Courier New | Verdana | Georgia | Palatino | Garamond | Comic Sans MS | Trebuchet MS
 # ---------------------------------------------------------------
 font:
-  enable: false
+  enable: true
 
   # Uri of fonts host. E.g. //fonts.googleapis.com (Default).
   host:
@@ -415,27 +416,28 @@ font:
   # Global font settings used for all elements in <body>.
   global:
     external: true
-    family: Lato
-    size:
+    family: "Linux Biolinum"
+    size: 14
 
   # Font settings for Headlines (H1, H2, H3, H4, H5, H6).
   # Fallback to `global` font settings.
   headings:
     external: true
-    family:
+    family: "Linux Biolinum"
     size:
 
   # Font settings for posts.
   # Fallback to `global` font settings.
   posts:
     external: true
-    family:
+    family: "Linux Biolinum"
+    size: 14
 
   # Font settings for Logo.
   # Fallback to `global` font settings.
   logo:
     external: true
-    family:
+    family: "Linux Biolinum"
     size:
 
   # Font settings for <code> and code blocks.
