@@ -15,15 +15,18 @@
       {{ post_template.render(post, true) }}
       {% endif %}
 
-      {% if loop.index === 2 %}
+      {% if loop.index === 2 or loop.index === 8 %}
         <article class="post post-type-normal post-ad">
           <div class="post-block">
             <ins class="adsbygoogle"
               style="display:block"
               data-ad-format="fluid"
-              data-ad-layout-key="-hd-7+2h-1m-4u"
+              data-ad-layout-key="-hh-7+2h-1m-4u"
               data-ad-client="ca-pub-3312623505166629"
               data-ad-slot="7307339641"></ins>
+            <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
             <footer class="post-footer"></footer>
           </div>
         </article>

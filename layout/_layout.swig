@@ -32,7 +32,6 @@
 
   <div class="{{ container_class }} {% block page_class %}{% endblock %}">
     <div class="headband"></div>
-
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner">{% include '_partials/header/index.swig' %}</div>
     </header>
@@ -42,6 +41,8 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          <!-- 顶部 slice -->
+          {% include '_custom/index.swig' %}
           <div class="site-top-ad">
             <!-- site-top-desktop -->
             <!-- 
