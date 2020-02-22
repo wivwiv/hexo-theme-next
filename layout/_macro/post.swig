@@ -33,7 +33,6 @@
 
     {% if not headlessPost %}
       <header class="post-header">
-
         {# Not to show title for quote posts that do not have a title #}
         {% if not (is_index and post.type === 'quote' and not post.title) %}
           <{% if theme.seo %}h2{% else %}h1{% endif %} class="post-title{% if post.direction && post.direction.toLowerCase() === 'rtl' %} rtl{% endif %}" itemprop="name headline">{#
@@ -65,13 +64,92 @@
           </{% if theme.seo %}h2{% else %}h1{% endif %}>
         {% endif %}
 
-        <div class="post-meta">
-          {% if post.top %}
-            <i class="fa fa-thumb-tack"></i>
-              置顶
-            <span class="post-meta-divider">|</span>
+        <!-- 描述 -->
+        {% if is_index %}
+          {% if post.image %}
+            <img class="post-avatar" alt="{{ post.title }}" src="{{ post.image }}" />
           {% endif %}
-         
+          <!-- 文章带了描述 -->
+          {% if post.description and theme.excerpt_description %}
+            <div class="excerpt-text">
+              {{ post.description }}
+            </div>
+            <!--noindex-->
+            {% if theme.read_more_btn %}
+              <div class="post-button text-center">
+                <a class="btn" href="{{ url_for(post.path) }}">
+                  {{ __('post.read_more') }} &raquo;
+                </a>
+              </div>
+            {% endif %}
+            <!--/noindex-->
+          
+          
+          {% elif post.excerpt %}
+            {{ post.excerpt }}
+            <!--noindex-->
+            {% if theme.read_more_btn %}
+              <div class="post-button text-center">
+                <a class="btn" href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}#more{% endif %}" rel="contents">
+                  {{ __('post.read_more') }} &raquo;
+                </a>
+              </div>
+            {% endif %}
+            <!--/noindex-->
+
+          {# 自动截断 #}
+          {% elif theme.auto_excerpt.enable %}
+            {% set content = post.content | replace('<td class="gutter">.*?</td>', "", "g") | striptags %}
+            <div class="excerpt-text">
+              {{ content.substring(0, theme.auto_excerpt.length) }}
+              {% if content.length > theme.auto_excerpt.length %}...{% endif %}
+            </div>
+
+            <!--noindex-->
+            {% if theme.read_more_btn %}
+              <div class="post-button text-center">
+                <a class="btn" href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}#more{% endif %}" rel="contents">
+                  {{ __('post.read_more') }} &raquo;
+                </a>
+              </div>
+            {% endif %}
+            <!--/noindex-->
+          {% else %}
+            {% if post.type === 'picture' %}
+              <a href="{{ url_for(post.path) }}">{{ post.content }}</a>
+            {% else %}
+              {{ post.content }}
+            {% endif %}
+          {% endif %}
+        {% endif %}
+
+        <div class="v-line"></div>
+        <div class="post-meta">
+
+          {% if post.categories and post.categories.length and theme.post_meta.categories %}
+            <span class="post-category">
+            {% if theme.post_meta.created_at or theme.post_meta.updated_at %}
+            {% endif %}
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              {% if theme.post_meta.item_text %}
+                <span class="post-meta-item-text">{{ __('post.in') }}</span>
+              {% endif %}
+              {% for cat in post.categories %}
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">{#
+                #}<a href="{{ url_for(cat.path) }}" itemprop="url" rel="index">{#
+                  #}<span itemprop="name">{{ cat.name }}</span>{#
+                #}</a>{#
+              #}</span>
+
+                {% set cat_length = post.categories.length %}
+                {% if cat_length > 1 and loop.index !== cat_length %}
+                  {{ __('symbol.comma') }}
+                {% endif %}
+              {% endfor %}
+            </span>
+          {% endif %}
 
           <span class="post-time">
 
@@ -103,7 +181,6 @@
 
               {% if display_updated or !theme.post_meta.created_at %}
                 {% if theme.post_meta.created_at and theme.post_meta.updated_at.enabled %}
-                <span class="post-meta-divider">|</span>
                 {% endif %}
 
                 <span class="post-meta-item-icon">
@@ -119,36 +196,9 @@
             {% endif %}
           </span>
 
-          {% if post.categories and post.categories.length and theme.post_meta.categories %}
-            <span class="post-category">
-            {% if theme.post_meta.created_at or theme.post_meta.updated_at %}
-              <span class="post-meta-divider">|</span>
-            {% endif %}
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              {% if theme.post_meta.item_text %}
-                <span class="post-meta-item-text">{{ __('post.in') }}</span>
-              {% endif %}
-              {% for cat in post.categories %}
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">{#
-                #}<a href="{{ url_for(cat.path) }}" itemprop="url" rel="index">{#
-                  #}<span itemprop="name">{{ cat.name }}</span>{#
-                #}</a>{#
-              #}</span>
-
-                {% set cat_length = post.categories.length %}
-                {% if cat_length > 1 and loop.index !== cat_length %}
-                  {{ __('symbol.comma') }}
-                {% endif %}
-              {% endfor %}
-            </span>
-          {% endif %}
-
           {% if post.comments %}
             {% macro comments() %}
               <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
@@ -194,7 +244,6 @@
           {# LeanCloud PageView #}
           {% if theme.leancloud_visitors.enable or (theme.valine.enable and theme.valine.appid and theme.valine.appkey and theme.valine.visitor) %}
             <span id="{{ url_for(post.path) }}" class="leancloud_visitors" data-flag-title="{{ post.title }}">
-              <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -206,7 +255,6 @@
           {% endif %}
 
           {% if not is_index and theme.busuanzi_count.enable and theme.busuanzi_count.post_views %}
-            <span class="post-meta-divider">|</span>
             <span class="post-meta-item-icon"
             {% if not theme.post_meta.item_text %} title="{{ __('post.views') }}" {% endif %}>
             <i class="fa fa-{{ theme.busuanzi_count.post_views_icon }}"></i>
@@ -218,7 +266,6 @@
           {% if config.symbols_count_time.symbols or config.symbols_count_time.time %}
             <div class="post-symbolscount">
               {% if not theme.symbols_count_time.separated_meta %}
-                <span class="post-meta-divider">|</span>
               {% endif %}
 
               {% if config.symbols_count_time.symbols %}
@@ -234,7 +281,6 @@
               {% endif %}
 
               {% if config.symbols_count_time.symbols and config.symbols_count_time.time %}
-                <span class="post-meta-divider">|</span>
               {% endif %}
 
               {% if config.symbols_count_time.time %}
@@ -247,6 +293,11 @@
                 <span title="{{ __('symbols_count_time.time') }}">{#
                 #}{{ symbolsTime(post.content, theme.symbols_count_time.awl, theme.symbols_count_time.wpm, __('symbols_count_time.time_minutes')) }}{#
               #}</span>
+              {% endif %}
+
+              {% if post.top %}
+                <i class="fa fa-thumb-tack"></i>
+                  置顶
               {% endif %}
             </div>
           {% endif %}
@@ -285,62 +336,10 @@
         </div>
       {% endif %}
 
-      {% if is_index %}
-        {% if post.description and theme.excerpt_description %}
-          {{ post.description }}
-          <!--noindex-->
-          {% if theme.read_more_btn %}
-            <div class="post-button text-center">
-              <a class="btn" href="{{ url_for(post.path) }}">
-                {{ __('post.read_more') }} &raquo;
-              </a>
-            </div>
-          {% endif %}
-          <!--/noindex-->
-        {% elif post.excerpt %}
-          {{ post.excerpt }}
-
-          {% if post.image %}
-          <div class="out-img-topic">
-            <img src={{ post.image }} class="img-topic" />
-          </div>
-          {% endif %}
-
-          <!--noindex-->
-          {% if theme.read_more_btn %}
-            <div class="post-button text-center">
-              <a class="btn" href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}#more{% endif %}" rel="contents">
-                {{ __('post.read_more') }} &raquo;
-              </a>
-            </div>
-          {% endif %}
-          <!--/noindex-->
-        {% elif theme.auto_excerpt.enable %}
-          {% set content = post.content | replace('<td class="gutter">.*?</td>', "", "g") | striptags %}
-            <p>
-              {{ content.substring(0, theme.auto_excerpt.length) }}
-              {% if content.length > theme.auto_excerpt.length %}...{% endif %}
-            </p>
-          <!--noindex-->
-          {% if theme.read_more_btn %}
-            <div class="post-button text-center">
-              <a class="btn" href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}#more{% endif %}" rel="contents">
-                {{ __('post.read_more') }} &raquo;
-              </a>
-            </div>
-          {% endif %}
-          <!--/noindex-->
-        {% else %}
-          {% if post.type === 'picture' %}
-            <a href="{{ url_for(post.path) }}">{{ post.content }}</a>
-          {% else %}
-            {{ post.content }}
-          {% endif %}
-        {% endif %}
-      {% else %}
+      {% if not is_index %}
         {{ post.content | replace('<\!-- ad --\>', '<div class="post-content-ad">          <ins class="adsbygoogle"            style="display:block; text-align:center;"            data-ad-layout="in-article"            data-ad-format="fluid"            data-ad-client="ca-pub-3312623505166629"            data-ad-slot="2640787587"></ins>        </div> <script> (adsbygoogle = window.adsbygoogle || []).push({});</script>', 'gim') }}
       {% endif %}
-    </di'v>
+    </div>
 
     {% if theme.related_posts.enable and (theme.related_posts.display_in_home or not is_index) %}
       {% include '../_partials/post/post-related.swig' with { post: post } %}
@@ -393,7 +392,6 @@
 
         {% if (theme.vkontakte_api.enable and theme.vkontakte_api.like) or (theme.facebook_sdk.enable and theme.facebook_sdk.like_button) %}
           {% if theme.rating.enable %}
-            <span class="post-meta-divider">|</span>
           {% endif %}
           <div class="social-like">
             {% if theme.vkontakte_api.enable and theme.vkontakte_api.like %}
@@ -412,7 +410,6 @@
 
         {% if (theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable) or (theme.baidushare.type === "button") %}
           {% if theme.rating.enable or (theme.vkontakte_api.enable and theme.vkontakte_api.like) or (theme.facebook_sdk.enable and theme.facebook_sdk.like_button) %}
-            <span class="post-meta-divider">|</span>
           {% endif %}
           <div class="social_share">
             {% if theme.baidushare.type === "button" %}

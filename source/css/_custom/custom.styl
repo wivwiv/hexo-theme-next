@@ -54,6 +54,60 @@ html.mist
     margin-top: 20px
     // font-family: "Linux Biolinum",'Noto Serif SC',sans-serif;
     color: #000;
+    h2, h3, h4, h5
+      margin-top: 32px;
+
+  // 首页特殊样式 
+  .content.true
+    .post-header
+      padding: 20px; 
+      // height: 200px;
+      position:relative;
+      .post-title
+        margin-top: 10px;
+      .post-avatar
+        width: 80px
+        height: 80px
+        margin-right: 10px;
+        border-radius: 5px;
+        float: left;
+      @media (max-width: 767px)
+        .post-avatar
+          width: 100%;
+          height: auto;
+          margin: 10px auto;
+      .excerpt-text
+        min-height: 50px;
+      .post-meta
+        clear: both;
+        margin-top: 10px;
+        margin-bottom: 0px !important;
+        color: #a0a0a0;
+        a
+          color: #a0a0a0;
+          border: none;
+        & > span 
+          margin-right: 10px;
+        time
+          border: none !important;
+          margin-right: 10px;
+      .v-line
+        border-bottom: 1px solid rgba(222,229,231,.45);
+        border-color: rgba(237,241,242,.6);
+        margin: 10px auto;
+
+    .post.post-type-normal
+      padding: 0
+    .posts-expand
+      .post-title
+        text-align: left;
+        font-size: 20px;
+        margin-bottom: 10px;
+      .post-title-link:hover::before
+        visibility: hidden
+      .post-meta
+        text-align: left;
+        margin-bottom: 10px;
 
   .posts-expand 
     .post-title
