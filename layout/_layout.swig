@@ -55,7 +55,7 @@
           {% if theme.scheme === 'Pisces' || theme.scheme === 'Gemini' %}
             {% include '_partials/header/sub-menu.swig' %}
           {% endif %}
-          <div id="content" class="content">
+          <div id="content" class="content {{ is_home() }}">
             {% block content %}{% endblock %}
           </div>
 

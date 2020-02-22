@@ -212,7 +212,7 @@ links_title: Links
 links_layout: block
 #links_layout: inline
 links:
-  Github: https://github.com/wivwiv
+  # Github: https://github.com/wivwiv
 
 # Sidebar Avatar
 avatar:
@@ -406,7 +406,7 @@ font:
   enable: true
 
   # Uri of fonts host. E.g. //fonts.googleapis.com (Default).
-  host:
+  host: //fonts.loli.net
 
   # Font options:
   # `external: true` will load this font family from `host` above.
@@ -416,28 +416,28 @@ font:
   # Global font settings used for all elements in <body>.
   global:
     external: true
-    family: "Linux Biolinum"
+    family: Linux Biolinum
     size: 14
 
   # Font settings for Headlines (H1, H2, H3, H4, H5, H6).
   # Fallback to `global` font settings.
   headings:
     external: true
-    family: "Linux Biolinum"
+    family:
     size:
 
   # Font settings for posts.
   # Fallback to `global` font settings.
   posts:
     external: true
-    family: "Linux Biolinum"
+    family:
     size: 14
 
   # Font settings for Logo.
   # Fallback to `global` font settings.
   logo:
     external: true
-    family: "Comic Sans MS"
+    family: Comic Sans MS
     size:
 
   # Font settings for <code> and code blocks.

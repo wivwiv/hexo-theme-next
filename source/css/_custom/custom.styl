@@ -6,6 +6,23 @@
   body
     font-size: 16px;
 
+@media (min-width: 767px)
+  // 在是否首页 .content.true
+  .content.true
+    .post-image
+      width: 50%;
+      margin: 0 auto;
+      &-8
+        width: 80%;
+        margin: 0 auto;
+      &-10
+        width: 100%;
+        margin: 0 auto;
+
+.content.false
+  .post-image.not-in-post
+      display: none;
+
 // Custom styles.
 html.mist
   #header
@@ -101,6 +118,11 @@ html.mist
   margin-top: 10px;
   .adsbygoogle
     margin: 0 auto;
+
+.sidebar:not(.sidebar-active)
+  .sitebar-ad-wrap
+    display: none;
+
   
 .post-ad
   &.post-type-normal
@@ -127,3 +149,31 @@ img.img-topic
     // margin-left: 46px;
   .post-meta
     left: 6px;
+
+.posts-expand .post-body img
+  padding: 3px;
+  border-radius: 6px;
+  border: none;
+
+.img-box
+  text-align: center;
+  br
+    display: none;
+  .img-wrap
+    width: 40%;
+    display: inline-block;
+    padding: 0;
+    margin: 10px;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    span
+      font-size: 12px
+      color: #333;
+      cursor: pointer;
+      &:hover
+        text-decoration: underline;
+
+@media (max-width: 767px)
+  .img-box .img-wrap
+    width: 90%;

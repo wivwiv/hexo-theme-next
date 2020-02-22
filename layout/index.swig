@@ -11,7 +11,7 @@
 {% block content %}
   <section id="posts" class="posts-expand">
     {% for post in page.posts %}
-      {% if post.visible !== false %}
+      {% if post.visible !== false and not post.not_in_home %}
       {{ post_template.render(post, true) }}
       {% endif %}
 

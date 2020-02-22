@@ -20,6 +20,7 @@
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             {{ __('sidebar.toc') }}
           </li>
+
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
             {{ __('sidebar.overview') }}
           </li>
@@ -152,16 +153,6 @@
         </div>
       </div>
 
-      <!-- web-site-overview -->
-      <!--
-      <div class="sitebar-ad-wrap">
-        <ins class="adsbygoogle"
-          style="display:inline-block;width:300px;height:250px"
-          data-ad-client="ca-pub-3312623505166629"
-          data-ad-slot="7498362592"></ins>
-      </div>
-      -->
-
       {% if display_toc and toc(page.content).length > 1 %}
       <!--noindex-->
         <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
@@ -184,6 +175,17 @@
         </div>
       <!--/noindex-->
       {% endif %}
+
+      <!-- web-site-overview-250-250 -->
+      <div class="sitebar-ad-wrap">
+        <ins class="adsbygoogle"
+            style="display:inline-block;width:200px;height:200px"
+            data-ad-client="ca-pub-3312623505166629"
+            data-ad-slot="7498362592"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
 
       {% if theme.sidebar.b2t %}
         <div class="back-to-top">
