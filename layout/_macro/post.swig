@@ -340,7 +340,7 @@
       {% else %}
         {{ post.content | replace('<\!-- ad --\>', '<div class="post-content-ad">          <ins class="adsbygoogle"            style="display:block; text-align:center;"            data-ad-layout="in-article"            data-ad-format="fluid"            data-ad-client="ca-pub-3312623505166629"            data-ad-slot="2640787587"></ins>        </div> <script> (adsbygoogle = window.adsbygoogle || []).push({});</script>', 'gim') }}
       {% endif %}
-    </div>
+    </di'v>
 
     {% if theme.related_posts.enable and (theme.related_posts.display_in_home or not is_index) %}
       {% include '../_partials/post/post-related.swig' with { post: post } %}
