@@ -71,3 +71,4 @@ if (_log_ajax) {
 <!-- Google Adsense -->
 <script data-ad-client="ca-pub-3312623505166629" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
+<script type="text/javascript" src="https://s4.cnzz.com/z_stat.php?id=1278634326&web_id=1278634326"></script>
