@@ -47,12 +47,15 @@ html.mist
     .menu-item
       margin-right: 5px;
       a
-        color: #777;
+        color: #000;
         &:hover
-          background-color: rgba(0, 0, 0, 0.05);
+          background: none;
+          opacity: 0.6
       &-active
         a
-          background-color: rgba(0, 0, 0, 0.05);
+          background: none;
+          opacity: 0.6;
+          // background-color: rgba(0, 0, 0, 0.05);
   .posts-expand
     article.post.post-type-normal
       border-radius: 5px;
@@ -76,6 +79,9 @@ html.mist
       position:relative;
       .post-title
         margin-top: 10px;
+        transition: all .3s;
+        &:hover a
+          color: #000
       .post-avatar
         width: 80px
         height: 80px
