@@ -21,7 +21,14 @@
 
 .content.false
   .post-image.not-in-post
-      display: none;
+    display: none;
+  @media (max-width: 767px)
+    .posts-expand
+      margin: 0;
+    .posts-expand article.post.post-type-normal
+      border-radius: 0;
+      padding: 10px 20px;
+      box-shadow: none;
 
 // Custom styles.
 html.mist
@@ -264,3 +271,6 @@ a[title="站长统计"]
     &:hover
       background-color: #ccc;
       color: #fff;
+
+.post-description
+  display: none;
