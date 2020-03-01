@@ -138,10 +138,11 @@ exturl: false
 # External url should start with http:// or https://
 menu:
   home: / || home
+  tools: /c || paper-plane
   # about: /about/ || user
   # youtube: /categories/youtube || youtube-play
   code: /categories/code || code
-  writer: /categories/writer || book
+  # writer: /categories/writer || book
   # tags: /tags/ || tags
   archives: /archives || archive
   # categories: /categories || th
@@ -541,7 +542,7 @@ changyan:
 # You can get your appid and appkey from https://leancloud.cn
 # More info available at https://valine.js.org
 valine:
-  enable: true # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version.
+  enable: false # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version.
   appid:  YoE2SPjjRMnbUvx4ypwleqjp-gzGzoHsz # your leancloud application appid
   appkey: cV3Yo77APWzQOvrb50eGQgE0  # your leancloud application appkey
   notify: false # mail notifier, See: https://github.com/xCss/Valine/wiki
@@ -577,12 +578,12 @@ gitment:
 # Demo: https://gitalk.github.io
 # Reference: https://asdfv1929.github.io/2018/01/20/gitalk/, https://liujunzhou.top/2018/8/10/gitalk-error/
 gitalk:
-  enable: false
-  github_id:  # Github repo owner
-  repo:  # Repository name to store issues.
-  client_id:  # Github Application Client ID
-  client_secret:  # Github Application Client Secret
-  admin_user:  # GitHub repo owner and collaborators, only these guys can initialize github issues
+  enable: true
+  github_id: wivwiv # Github repo owner
+  repo: mindspark-comment # Repository name to store issues.
+  client_id: 6e1ff3ad6f5bc898ff82  # Github Application Client ID
+  client_secret: 9c54f68fc720d9ad651d3f88b7ccdcf4a17b01a2 # Github Application Client Secret
+  admin_user: wivwiv # GitHub repo owner and collaborators, only these guys can initialize github issues
   distraction_free_mode: true # Facebook-like distraction free mode
 
 # Baidu Share

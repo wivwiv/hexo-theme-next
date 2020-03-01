@@ -53,6 +53,7 @@ html.mist
   #menu 
     .menu-item
       margin-right: 5px;
+      position: relative;
       a
         color: #000;
         &:hover
@@ -63,6 +64,17 @@ html.mist
           background: none;
           opacity: 0.6;
           // background-color: rgba(0, 0, 0, 0.05);
+      &-tools
+        &:after
+          content: " ";
+          width: 6px;
+          height: 6px;
+          background-color: #f5222d;
+          display: inline-block;
+          position: absolute;
+          right: 2px;
+          top: 4px;
+          border-radius: 50%;
   .posts-expand
     article.post.post-type-normal
       border-radius: 5px;
@@ -274,3 +286,13 @@ a[title="站长统计"]
 
 .post-description
   display: none;
+
+.post-block.archive, .post-block.category, .post-block.tag
+  .posts-collapse .collection-title
+    margin: 30px auto;
+  .post.post-type-normal
+    margin: 6px 0;
+  .post-header
+    border-bottom: none;
+  .post-title
+    margin: 0 0 0 60px;
