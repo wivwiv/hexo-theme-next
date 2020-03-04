@@ -14,6 +14,7 @@
       %}
       {% set tags_ = site.tags %}
     <div class="site-tag">
+      <a href="/tags" rel="tag" style="background-color: {{ colors_[0] }}">+ 全部</a>
       {% for tag in tags_ %}
         {% if tag.length >= 2 %}
           <a 
@@ -23,7 +24,6 @@
             title="共计{{tag.length}}篇"># {{ tag.name }}</a>
         {% endif %}
       {% endfor %}
-      <a href="/tags" rel="tag" style="background-color: {{ colors_[0] }}">+ 全部</a>
     </div>
   {% endif -%}
 </div>

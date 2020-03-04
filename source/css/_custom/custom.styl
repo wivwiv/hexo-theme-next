@@ -278,11 +278,20 @@ a[title="站长统计"]
   text-align: center;
   padding-top: 10px;
   .page-number, .next, .prev
-    border-top: none;
     transition: all .3s;
-    &:hover
-      background-color: #ccc;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    line-height: 40px;
+    margin-right: 16px;
+    border: 2px solid #000 !important;
+    color: #000;
+    &:hover, &.current
+      background-color: #000;
       color: #fff;
+    &.current
+      opacity: 0.7;
 
 .post-description
   display: none;
@@ -296,3 +305,27 @@ a[title="站长统计"]
     border-bottom: none;
   .post-title
     margin: 0 0 0 60px;
+
+.theme-info
+  margin-right: 12px;
+  .theme-link
+    margin-right: 10px;
+
+.post-footer
+  .post-tags
+    margin-top: 10px;
+  .foot-note
+    margin-top: 40px;
+  h5
+    margin: 0;
+  .note
+    position: relative;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #eee;
+    // border-left-width: 5px;
+    border-radius: 3px;
+    &.primary
+      // border-left-color: rgba(0,0,0,0.7);
+.post-nav
+  border-top: none;

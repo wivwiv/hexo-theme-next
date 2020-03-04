@@ -77,7 +77,7 @@ footer:
   # -------------------------------------------------------------
   powered:
     # Hexo link (Powered by Hexo).
-    enable: true
+    enable: false
     # Version info of Hexo after Hexo link (vX.X.X).
     version: false
 
@@ -85,7 +85,7 @@ footer:
     # Theme & scheme info link (Theme - NexT.scheme).
     enable: true
     # Version info of NexT after scheme info (vX.X.X).
-    version: true
+    version: false
   # -------------------------------------------------------------
   # Beian icp information for Chinese users. In China, every legal website should have a beian icp in website footer.
   # http://www.miitbeian.gov.cn
@@ -95,7 +95,7 @@ footer:
 
   # -------------------------------------------------------------
   # Any custom text can be defined here.
-  #custom_text: Hosted by <a href="https://pages.coding.me" class="theme-link" rel="noopener" target="_blank">Coding Pages</a>
+  # custom_text: Hosted by <a href="https://pages.coding.me" class="theme-link" rel="noopener" target="_blank">Coding Pages</a>
 
 # Creative Commons 4.0 International License.
 # https://creativecommons.org/share-your-work/licensing-types-examples
@@ -213,7 +213,7 @@ links_title: Links
 links_layout: block
 #links_layout: inline
 links:
-  # Github: https://github.com/wivwiv
+  Johnson: https://johnsonlee.site/||行到水穷处 坐看云起时
 
 # Sidebar Avatar
 avatar:
@@ -316,7 +316,7 @@ symbols_count_time:
 codeblock:
   # Manual define the border radius in codeblock
   # Leave it empty for the default 1
-  border_radius:
+  border_radius: 4
   # Add copy button on codeblock
   copy_button:
     enable: true
@@ -385,7 +385,7 @@ custom_logo:
 # Code Highlight theme
 # Available values: normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
-highlight_theme: night
+highlight_theme: normal
 
 # Enable "cheers" for archive page.
 cheers_enabled: true
@@ -542,7 +542,7 @@ changyan:
 # You can get your appid and appkey from https://leancloud.cn
 # More info available at https://valine.js.org
 valine:
-  enable: false # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version.
+  enable: true # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version.
   appid:  YoE2SPjjRMnbUvx4ypwleqjp-gzGzoHsz # your leancloud application appid
   appkey: cV3Yo77APWzQOvrb50eGQgE0  # your leancloud application appkey
   notify: false # mail notifier, See: https://github.com/xCss/Valine/wiki
@@ -578,7 +578,7 @@ gitment:
 # Demo: https://gitalk.github.io
 # Reference: https://asdfv1929.github.io/2018/01/20/gitalk/, https://liujunzhou.top/2018/8/10/gitalk-error/
 gitalk:
-  enable: true
+  enable: false
   github_id: wivwiv # Github repo owner
   repo: mindspark-comment # Repository name to store issues.
   client_id: 6e1ff3ad6f5bc898ff82  # Github Application Client ID
@@ -688,9 +688,9 @@ rating:
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
-  enable: false
-  app_id: #<app_id>
-  app_key: #<app_key>
+  enable: true
+  app_id: YoE2SPjjRMnbUvx4ypwleqjp
+  app_key: cV3Yo77APWzQOvrb50eGQgE0
   # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
   # If you don't care about security in leancloud counter and just want to use it directly
   # (without hexo-leancloud-counter-security plugin), set `security` to `false`.

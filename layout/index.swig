@@ -16,6 +16,7 @@
       {% endif %}
 
       {% if loop.index === 2 or loop.index === 8 %}
+      <!--
         <article class="post post-type-normal post-ad">
           <div class="post-block">
             <ins class="adsbygoogle"
@@ -30,6 +31,7 @@
             <footer class="post-footer"></footer>
           </div>
         </article>
+        -->
       {% endif %}
     {% endfor %}
   </section>

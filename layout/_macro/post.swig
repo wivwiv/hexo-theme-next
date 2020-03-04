@@ -373,13 +373,51 @@
     {% endif %}
 
     <footer class="post-footer">
-      {% if post.tags and post.tags.length and not is_index %}
-        <div class="post-tags">
-          {% for tag in post.tags %}
-            <a href="{{ url_for(tag.path) }}" rel="tag"># {{ tag.name }}</a>
+    
+      {% if not is_index %}
+      <!-- 相关文章 -->
+      <div class="foot-note note primary" link="{{ post.path }}">
+        <h5 class="xiangguan">相关文章</h5>
+        {% set n = 0 %}
+        {% for _post in site.posts %}
+          {% for tag in _post.tags %}
+            {% for _tag in post.tags %}
+              {% if _tag.name === tag.name and _post.title !== post.title %}
+                <a href="{{ url_for(_post.path) }}" rel="tag">{{ _post.title }}</a>
+                {% set n += 1 %}
+              {% endif %}
+            {% endfor %}
           {% endfor %}
-        </div>
+        {% endfor %}
+
+        {% if post.tags and post.tags.length  %}
+          <div class="post-tags">
+            {% for tag in post.tags %}
+              <a href="{{ url_for(tag.path) }}" rel="tag"># {{ tag.name }}</a>
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        {% if n == 0 %}
+          <style>
+            .foot-note[link="{{ post.path }}"] .xiangguan {
+              display: none;
+            }
+          </style>
+
+          {% if not post.tags.length %}
+            <style>
+              .foot-note[link="{{ post.path }}"] {
+                display: none;
+              }
+            </style>
+          {% endif %}
+
+        {% endif %}
+        
+      </div>
       {% endif %}
+
 
       {% if not is_index %}
       {% if theme.rating.enable or (theme.vkontakte_api.enable and theme.vkontakte_api.like) or (theme.facebook_sdk.enable and theme.facebook_sdk.like_button) or (theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable) or (theme.baidushare and theme.baidushare.type === "button") %}

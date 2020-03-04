@@ -128,7 +128,7 @@
           {% endif %}
 
           {# Blogroll #}
-          {% if theme.links %}
+          {% if theme.links and false %}
             <div class="links-of-blogroll motion-element {{ "links-of-blogroll-" + theme.links_layout | default('inline') }}">
               <div class="links-of-blogroll-title">
                 <i class="fa  fa-fw fa-{{ theme.links_icon | default('globe') | lower }}"></i>
@@ -176,16 +176,18 @@
       <!--/noindex-->
       {% endif %}
 
-      <!-- web-site-overview-250-250 -->
-      <div class="sitebar-ad-wrap">
-        <ins class="adsbygoogle"
-            style="display:inline-block;width:200px;height:200px"
-            data-ad-client="ca-pub-3312623505166629"
-            data-ad-slot="7498362592"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-      </div>
+      <!-- site-bar-200-200 -->
+      {% if not is_home() %}
+        <div class="sitebar-ad-wrap">
+          <ins class="adsbygoogle"
+              style="display:inline-block;width:200px;height:200px"
+              data-ad-client="ca-pub-3312623505166629"
+              data-ad-slot="7498362592"></ins>
+          <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+        </div>
+      {% endif %}
 
       {% if theme.sidebar.b2t %}
         <div class="back-to-top">
@@ -195,7 +197,6 @@
           {% endif %}
         </div>
       {% endif %}
-
     </div>
   </aside>
 {% endmacro %}
