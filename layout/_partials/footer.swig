@@ -76,7 +76,7 @@
 
 <script src="https://ip.ws.126.net/ipquery"></script>
 <script>
-if (location.hostname === 'wivwiv.com') {
+if (location.hostname !== 'localhost') {
   var _log_ajax = fetch || $.get
   if (_log_ajax) {
     _log_ajax('https://log.bigpar.cn/log/http_request_log?spm=blog&key=' + document.title)
@@ -139,7 +139,8 @@ if (location.hostname === 'wivwiv.com') {
     }
     var title = __user_type + '_' + user_from + '_' + document.title.slice(0, 120)
     var sc = window.screen
-    var content = '基础信息\n - 操作系统: ' + __getOperationSys() + '\n - 分辨率: ' + sc.width + 'x' + sc.height + '\n - 标题: ' + document.title + '\n - 来源: ' + user_from + '\n - 地址: ' + lo  || '' + '_' + lc || ''
+    var content = '\n - 操作系统: ' + __getOperationSys() + '\n - 分辨率: ' + sc.width + 'x' + sc.height + '\n - 标题: ' + document.title + '\n - 来源: ' + document.referrer + '\n - 地址: ' + lo + lc
+    + '\n - url: ' + location.href + '\n - 时间: ' + new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString()
     __send__(encodeURI(title), encodeURI(content))
   }
 }

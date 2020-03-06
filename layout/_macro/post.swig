@@ -379,12 +379,14 @@
       <div class="foot-note note primary" link="{{ post.path }}">
         <h5 class="xiangguan">相关文章</h5>
         {% set n = 0 %}
+        {% set x %}
         {% for _post in site.posts %}
           {% for tag in _post.tags %}
             {% for _tag in post.tags %}
-              {% if _tag.name === tag.name and _post.title !== post.title %}
-                <a href="{{ url_for(_post.path) }}" rel="tag">{{ _post.title }}</a>
+              {% if _tag.name === tag.name and _post.title !== post.title and not x.includes(_post.title) %}
+                <a href="{{ url_for(_post.path) }}" title="{{ _post.description }}" class="article-link">{{ _post.title }}</a>
                 {% set n += 1 %}
+                {% set x += _post.title %}
               {% endif %}
             {% endfor %}
           {% endfor %}

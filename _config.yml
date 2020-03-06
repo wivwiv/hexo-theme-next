@@ -343,7 +343,7 @@ reward:
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
 related_posts:
   enable: false
-  title: 相关阅读 # custom header, leave empty to use the default one
+  title: 相关文章 # custom header, leave empty to use the default one
   display_in_home: false
   params:
     maxCount: 5
@@ -417,8 +417,8 @@ font:
   # Global font settings used for all elements in <body>.
   global:
     external: true
-    family: Linux Biolinum
-    size: 14
+    family: "SF Pro SC"
+    size: 16
 
   # Font settings for Headlines (H1, H2, H3, H4, H5, H6).
   # Fallback to `global` font settings.
@@ -432,7 +432,7 @@ font:
   posts:
     external: true
     family:
-    size: 14
+    size: 16
 
   # Font settings for Logo.
   # Fallback to `global` font settings.

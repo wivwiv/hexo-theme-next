@@ -1,10 +1,14 @@
 @media (min-width: 1200px)
   body
-    font-size: 14px;
+    font-size: 16px;
 
 @media (min-width: 1600px)
   body
     font-size: 16px;
+
+@media (max-width: 768px)
+  body
+    font-size: 17px;
 
 @media (min-width: 767px)
   // 在是否首页 .content.true
@@ -76,9 +80,15 @@ html.mist
           top: 4px;
           border-radius: 50%;
   .posts-expand
+    p
+      line-height: 29px;
+      margin-bottom: 30px;
     article.post.post-type-normal
       border-radius: 5px;
       padding: 10px 30px 20px 30px;
+      // box-shadow: 0 0 40px rgba(0,0,0,.12);
+  .content.true
+    article.post.post-type-normal
       box-shadow: 0 0 40px rgba(0,0,0,.12);
 
   .main-inner
@@ -86,9 +96,9 @@ html.mist
   .post-body
     margin-top: 20px
     // font-family: "Linux Biolinum",'Noto Serif SC',sans-serif;
-    color: #000;
+    color: #2a2a2a;
     h2, h3, h4, h5
-      margin-top: 32px;
+      // margin-top: 32px;
 
   // 首页特殊样式 
   .content.true
@@ -107,20 +117,25 @@ html.mist
         margin-right: 10px;
         border-radius: 5px;
         float: left;
+        object-fit: cover;
       @media (max-width: 767px)
         .post-avatar
+          display: none;
           width: 100%;
           height: auto;
           margin: 10px auto;
       .excerpt-text
         min-height: 50px;
+        font-size: 14px;
+        line-height: 28px;
+        color: #757575;
       .post-meta
         clear: both;
         margin-top: 10px;
         margin-bottom: 0px !important;
         color: #a0a0a0;
         .post-category, .post-category a
-          color: #555;
+          color: #2a2a2a;
         a
           color: #a0a0a0;
           border: none;
@@ -139,7 +154,7 @@ html.mist
     .posts-expand
       .post-title
         text-align: left;
-        font-size: 20px;
+        font-size: 18px;
         margin-bottom: 10px;
       .post-title-link:hover::before
         visibility: hidden
@@ -157,7 +172,7 @@ html.mist
     .post-meta
         text-align: center;
     .post-title-link::before
-        background-image: linear-gradient(19deg, #101010 0%, #555 100%);
+        background-image: linear-gradient(19deg, #101010 0%, #2a2a2a 100%);
 
       // background-image: linear-gradient(90deg,#a166ab 0,#ef4e7b 25%,#f37055 50%,#ef4e7b 75%,#a166ab 100%);
     
@@ -180,7 +195,7 @@ html.mist
         width: 100%!important;
 
   .btn {
-    color: #555;
+    color: #2a2a2a;
     background-color: #fff;
     border-radius: 3px;
     font-size: 15px;
@@ -228,6 +243,22 @@ html.mist
   margin: 16px auto 0 auto;
 .adsbygoogle
   // background-color: red;
+.top-comment-ad
+  margin: 0px auto;
+  text-align: center;
+
+@media (max-width: 767px)
+  .top-comment-ad.desktop
+    display: none;
+
+@media (min-width: 768px)
+  .top-comment-ad.mobile
+    display: none;
+
+.comments
+  max-width: 728px;
+  margin: 30px auto;
+
 .post-content-ad
   margin: 24px auto;
 
@@ -318,14 +349,24 @@ a[title="站长统计"]
     margin-top: 40px;
   h5
     margin: 0;
+    margin-bottom: 10px;
   .note
     position: relative;
     padding: 15px;
     margin-bottom: 10px;
     border: 1px solid #eee;
-    // border-left-width: 5px;
+    border-left-width: 5px;
     border-radius: 3px;
     &.primary
-      // border-left-color: rgba(0,0,0,0.7);
+      border-left-color: rgba(0,0,0,0.7);
+    .article-link
+      display: block;
+      border-bottom: none;
+      margin-botom: 10px;
+      &:hover
+        // text-decoration: underline;
+        // text-decoration-style: dashed;
 .post-nav
   border-top: none;
+.code .line
+  font-size: 12px;

@@ -5,7 +5,7 @@ Custom head.
 <meta name="shenma-site-verification" content="1a91b4c6be27d8a841a5b00ca9d5591f_1582027479">
 <!-- 百度统计 -->
 <script>
-if (location.hostname === 'wivwiv.com') {
+if (location.hostname !== 'localhost') {
   var _hmt = _hmt || [];
   (function() {
     var hm = document.createElement("script");

@@ -1,5 +1,29 @@
 {% if page.comments %}
 
+  <!-- top-comment-728x90 -->
+  <div class="top-comment-ad desktop">
+    <ins class="adsbygoogle"
+      style="display:inline-block;width:728px;height:80px"
+      data-ad-client="ca-pub-3312623505166629"
+      data-ad-slot="4810837113"></ins>
+  </div>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+  <!-- top-comment-320x250 
+  <div class="top-comment-ad mobile">
+    <ins class="adsbygoogle"
+        style="display:inline-block;width:320px;height:250px"
+        data-ad-client="ca-pub-3312623505166629"
+        data-ad-slot="3144499240"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+  -->
+  
+
   {% if theme.facebook_sdk.enable and theme.facebook_comments_plugin.enable %}
     <div class="comments" id="comments">
       <div class="fb-comments"
@@ -53,15 +77,4 @@
     </div>
 
   {% endif %}
-
-          <!-- top-comment-1 -->
-          <!--
-          <div class="comments-ad">
-            <ins class="adsbygoogle"
-                 style="display:inline-block;width:300px;height:250px"
-                 data-ad-client="ca-pub-3312623505166629"
-                data-ad-slot="4810837113"></ins>
-          </div>
-          -->
-
 {% endif %}
