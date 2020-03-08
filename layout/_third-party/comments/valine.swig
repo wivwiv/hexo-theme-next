@@ -10,6 +10,7 @@
 {% endif %}
 <script src="{{ valine_uri }}"></script>
 
+
 <script>
   var GUEST = ['nick', 'mail', 'link'];
   var guest = '{{ theme.valine.guest_info }}';
@@ -29,3 +30,5 @@
     visitor: {{ theme.valine.visitor }},
   });
 </script>
+
+<script src="{{ url_for(theme.js) }}/src/up_down.js?v={{ version }}"></script>

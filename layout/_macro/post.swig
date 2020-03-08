@@ -375,6 +375,21 @@
     <footer class="post-footer">
     
       {% if not is_index %}
+
+      <!-- 点赞 -->
+      {% if theme.leancloud_visitors.up %}
+        <div class="up_down" id="up_down">
+          <div class="up up_down_item">
+            顶: <span class="up_val">0</span>
+          </div>
+          
+          <div class="down up_down_item">
+            踩: <span class="down_val">0</span>
+          </div>
+        </div>
+      {% endif %}
+
+
       <!-- 相关文章 -->
       <div class="foot-note note primary" link="{{ post.path }}">
         <h5 class="xiangguan">相关文章</h5>
@@ -383,7 +398,7 @@
         {% for _post in site.posts %}
           {% for tag in _post.tags %}
             {% for _tag in post.tags %}
-              {% if _tag.name === tag.name and _post.title !== post.title and not x.includes(_post.title) %}
+              {% if n <= 8 and _tag.name === tag.name and _post.title !== post.title and not x.includes(_post.title) %}
                 <a href="{{ url_for(_post.path) }}" title="{{ _post.description }}" class="article-link">{{ _post.title }}</a>
                 {% set n += 1 %}
                 {% set x += _post.title %}
