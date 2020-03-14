@@ -30,5 +30,5 @@
     visitor: {{ theme.valine.visitor }},
   });
 </script>
-
+<script src="https://cdn.jsdelivr.net/npm/axios@0.19.2/dist/axios.min.js"></script>
 <script src="{{ url_for(theme.js) }}/src/up_down.js?v={{ version }}"></script>

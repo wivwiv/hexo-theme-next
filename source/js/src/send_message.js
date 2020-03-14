@@ -2,9 +2,16 @@ function send_message() {
   function __send__(title, content) {
     var f = fetch
     var url = 'https://sc.ftqq.com/SCU87479T1204c04bf8a10cee3be0cf223aa82dd15e5cf8d0783f8.send?text=' + title + '&desp=' + content
-    console.log(url)
     f(url)
     localStorage.setItem('__user__meta__', Date.now())
+  }
+
+  function getSpider() {
+    var a = ['bingbot', 'Sosospider', 'Sosoimagespider', 'Yahoo! Slurp', 'Sogou web spider', 'Googlebot', 'Baiduspider', '360Spider', 'YoudaoBot']
+    var userAgent = navigator.userAgent
+    var sp = a.find(function(item) { return userAgent.includes(item) })
+    sp = sp || '普通用户'
+    return sp
   }
   
   function __getOperationSys() {
@@ -31,7 +38,7 @@ function send_message() {
     try {
       var ts = parseInt(__user__meta__, 10)
       // 老用户
-      if (Date.now() - ts > 1 * 86400 * 1000) {
+      if (Date.now() - ts > 1 * 43200 * 1000) {
         __user_type = '回访'
       } else {
         __user_type = '老用户'
@@ -52,7 +59,9 @@ function send_message() {
     var title = __user_type + '_' + user_from + '_' + document.title.slice(0, 120)
     var sc = window.screen
     var content = '\n - 操作系统: ' + __getOperationSys() + '\n - 分辨率: ' + sc.width + 'x' + sc.height + '\n - 标题: ' + document.title + '\n - 来源: ' + document.referrer + '\n - 地址: ' + lo + lc
-    + '\n - url: ' + location.href + '\n - 时间: ' + new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString()
+    + '\n - url: ' + location.href + '\n - 时间: ' + new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString() + 
+    '\n - spider: ' + getSpider() + 
+    '\n - 语言: ' + navigator.language
     __send__(encodeURI(title), encodeURI(content))
   }  
 }

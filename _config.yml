@@ -103,7 +103,7 @@ footer:
 creative_commons:
   license: by-nc-sa
   sidebar: false
-  post: false
+  post: true
 
 
 # ---------------------------------------------------------------
@@ -214,7 +214,7 @@ links_layout: block
 #links_layout: inline
 links:
   Johnson: https://johnsonlee.site/||行到水穷处 坐看云起时
-  本站托管服务商: https://wivwiv.com/redirect.html?host=www.qexw.com&link=aHR0cHM6Ly93d3cucWV4dy5jb20vYWZmLnBocD9hZmY9NTkx||企鹅小屋 2 元/月香港 Plesk 免备案空间
+  # 本站托管服务商: https://wivwiv.com/redirect.html?host=www.qexw.com&link=aHR0cHM6Ly93d3cucWV4dy5jb20vYWZmLnBocD9hZmY9NTkx||企鹅小屋 2 元/月香港 Plesk 免备案空间
 
 # Sidebar Avatar
 avatar:

@@ -402,6 +402,7 @@ a[title="站长统计"]
   text-align: center;
   margin-top: 40px;
   .up_down_item
+    user-select: none;
     cursor: pointer;
     margin: 10px;
     padding: 4px 16px;
@@ -439,12 +440,12 @@ h1, h2, h3, h4, h5, h6
     font-weight: 700;
     font-size: 1.1em;
     width: 50%;
-    &:first-child
-      background-color: #6f42c1;
-      border-radius: 4px 0 0 4px;
     &:last-child
       background-color: #d9534f;
       border-radius: 0 4px 4px 0;
+    &:first-child
+      background-color: #6f42c1;
+      border-radius: 4px 0 0 4px;
   tr td
     &:first-child
       &:before
